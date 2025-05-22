@@ -14,7 +14,7 @@ if RICH_CLICK:
     program_name = sys.argv[0]
     
     click.rich_click.OPTION_GROUPS = {
-        f"{sys.argv[0]}": [
+        f"{program_name}": [
             {
                 "name": "Standard output logging",
                 "options": ["--stdout-log-level"],
@@ -24,7 +24,7 @@ if RICH_CLICK:
                 "options": ["--logfile", "--logfile-log-level"],
             },
         ],
-        f"{sys.argv[0]} install": [
+        f"{program_name} install": [
             {
                 "name": "Basic Usage",
                 "options": ["--recommended", "--sources", "--package-list"],
