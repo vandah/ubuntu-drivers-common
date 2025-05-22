@@ -14,7 +14,7 @@ if RICH_CLICK:
     program_name = sys.argv[0]
     
     click.rich_click.OPTION_GROUPS = {
-        "f{sys.argv[0]}": [
+        f"{sys.argv[0]}": [
             {
                 "name": "Standard output logging",
                 "options": ["--stdout-log-level"],
@@ -72,7 +72,6 @@ def debug():
 @click.argument("package-name", type=click.STRING, default=None, required=False)
 @click.option("--recommended", is_flag=True, help="Automatically select the most compatible version of a driver in case there is multiple options.")
 @click.option("--gpgpu", is_flag=True, help="Select packages intended for server environments with GPGPUs and no graphical environment.")
-#@click.option("--driver-type", type=click.Choice(DriverType._member_names_), default="DESKTOP")
 @click.option("--include-dkms/--no-dkms", default=False, help="Add DKMS packages to the selection.")
 @click.option("--oem/--no-oem", default=True, help="Include OEM packages.")
 @click.option("--sources", type=click.Choice(PackageSources._member_names_), default="NONFREE")
